@@ -1,33 +1,11 @@
 [
     {
-        "titlu": "Impactul AI asupra vieții private",
-        "descriere": "Ce riscuri implică AI pentru datele noastre personale?",
-        "link": "articol1.html"
+        "titlu": "Securitatea pe internet",
+        "continut": "Este important să folosești parole sigure și autentificare în doi pași."
     },
     {
-        "titlu": "Cum să te protejezi online?",
-        "descriere": "Ghid practic pentru securitatea cibernetică.",
-        "link": "articol2.html"
+        "titlu": "Protecția datelor",
+        "continut": "Nu oferi informații personale pe site-uri nesigure."
     }
 ]
-<div class="container mt-5">
-    <h1>Articole despre etică și securitate</h1>
-    <p>Aici vei găsi articole despre securitatea cibernetică, protecția datelor și dilemele etice din tehnologie.</p>
-    
-    <div id="lista-articole" class="list-group"></div>
-</div>
 
-<script>
-    fetch("articole.json")
-        .then(response => response.json())
-        .then(data => {
-            let lista = document.getElementById("lista-articole");
-            data.forEach(articol => {
-                let element = document.createElement("a");
-                element.href = articol.link;
-                element.classList.add("list-group-item", "list-group-item-action");
-                element.innerHTML = `<h4>${articol.titlu}</h4><p>${articol.descriere}</p>`;
-                lista.appendChild(element);
-            });
-        });
-</script>
