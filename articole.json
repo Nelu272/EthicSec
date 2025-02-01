@@ -10,3 +10,24 @@
         "link": "articol2.html"
     }
 ]
+<div class="container mt-5">
+    <h1>Articole despre etică și securitate</h1>
+    <p>Aici vei găsi articole despre securitatea cibernetică, protecția datelor și dilemele etice din tehnologie.</p>
+    
+    <div id="lista-articole" class="list-group"></div>
+</div>
+
+<script>
+    fetch("articole.json")
+        .then(response => response.json())
+        .then(data => {
+            let lista = document.getElementById("lista-articole");
+            data.forEach(articol => {
+                let element = document.createElement("a");
+                element.href = articol.link;
+                element.classList.add("list-group-item", "list-group-item-action");
+                element.innerHTML = `<h4>${articol.titlu}</h4><p>${articol.descriere}</p>`;
+                lista.appendChild(element);
+            });
+        });
+</script>
